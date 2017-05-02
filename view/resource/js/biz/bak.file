@@ -1,0 +1,34 @@
+
+//							$("#detail_info")
+//									.html(
+//											"<h3>基本参数</h3><div>厂商<input id='edit_changShang' class='input-medium' style='width: 300px;' value='{edit_changShang}' ></input><br />"
+//													+ "级别<input id='edit_jiBie' class='input-medium' style='width: 300px;' value='{edit_jiBie}' ></input><br />"
+//													+ "发动机<input id='edit_faDongJi' class='input-medium' style='width: 300px;' value='{edit_faDongJi}' ></input><br />"
+//													+ "变速箱<input id='edit_bianSuxiang' class='input-medium' style='width: 300px;' value='{edit_bianSuxiang}' ></input><br />"
+//													+ "长*宽*高(mm)<input id='edit_changGaoKuan' class='input-medium' style='width: 300px;' value='{edit_changGaoKuan}' ></input><br />"
+//													+ "车身结构<input id='edit_cheShenJieGou' class='input-medium' style='width: 300px;' value='{edit_cheShenJieGou}' ></input><br />"
+//													+ "最高车速(km/h)<input id='edit_zuiGaoCheSu' class='input-medium' style='width: 300px;' value='{edit_zuiGaoCheSu}' ></input><br />"
+//													+ "官方0-100km/h加速(s)<input id='edit_guanFang0100' class='input-medium' style='width: 300px;' value='{edit_guanFang0100}' ></input><br />"
+//													+ "实测0-100km/h加速(s)<input id='edit_shiCe0100' class='input-medium' style='width: 300px;' value='{edit_shiCe0100}' ></input><br />"
+//													+ "实测100-0km/h制动(m)<input id='edit_shiCe1000' class='input-medium' style='width: 300px;' value='{edit_shiCe1000}' ></input><br />"
+//													+ "实测油耗(L/100km)<input id='edit_shiCeYouHao' class='input-medium' style='width: 300px;' value='{edit_shiCeYouHao}' ></input><br />"
+//													+ "工信部综合油耗(L/100km)<input id='edit_gongXinBuYouHao' class='input-medium' style='width: 300px;' value='{edit_gongXinBuYouHao}' ></input><br />"
+//													+ "实测离地间隙(mm)<input id='edit_shiCeLiDiJianXi' class='input-medium' style='width: 300px;' value='{edit_shiCeLiDiJianXi}' ></input><br />"
+//													+ "整车质保<input id='edit_zhengCheZhiBao' class='input-medium' style='width: 300px;' value='{edit_zhengCheZhiBao}' ></input></div><h3>车身</h3><div>"
+//													+ "</div><h3>发动机</h3><div>"
+//													+ "</div><h3>变速箱</h3><div>"
+//													+ "</div><h3>底盘转向</h3><div>"
+//													+ "</div><h3>车轮制动</h3><div>>"
+//													+ "</div><h3>安全装置</h3><div>>"
+//													+ "</div><h3>操控配置</h3><div>>"
+//													+ "</div><h3>外部配置</h3><div>>"
+//													+ "</div><h3>内部配置</h3><div>"
+//													+ "</div><h3>座椅配置</h3><div>"
+//													+ "</div><h3>多媒体配置</h3><div>"
+//													+ "</div><h3>灯光配置</h3><div>"
+//													+ "</div><h3>玻璃/后视镜</h3><div>"
+//													+ "</div><h3>空调/冰箱</h3><div>"
+//													+ "</div><h3>高科技配置</h3><div>"
+//													+ "</div><h3>选装包</h3><div></div>");
+
+

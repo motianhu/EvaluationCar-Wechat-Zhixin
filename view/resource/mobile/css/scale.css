@@ -1,0 +1,40 @@
+﻿/*弹框样式*/
+.imgzoom_pack {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, .7);
+	z-index: 8999;
+	display: none;
+}
+
+.imgzoom_pack .imgzoom_x {
+	color: #fff;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	background: #000;
+	text-align: center;
+	position: fixed;
+	right: 5px;
+	top: 60px;
+	z-index: 9000;
+	cursor: pointer;
+}
+
+.imgzoom_pack .imgzoom_img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+
+.imgzoom_pack .imgzoom_img img {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+}

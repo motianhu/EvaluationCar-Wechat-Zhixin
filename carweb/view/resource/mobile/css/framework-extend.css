@@ -1,0 +1,455 @@
+/* === Messages === */
+.messages-content {
+  background: #fff;
+}
+.messages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+.messages-date {
+  text-align: center;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1;
+  margin: 10px 15px;
+  color: #8e8e93;
+}
+html.ios-gt-8 .messages-date {
+  font-weight: 600;
+}
+.messages-date span {
+  font-weight: 400;
+}
+.message {
+  box-sizing: border-box;
+  margin: 1px 10px 0;
+  max-width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+.message:first-child {
+  margin-top: 10px;
+}
+.message .message-text {
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 6px 16px 9px;
+  min-width: 48px;
+  min-height: 35px;
+  font-size: 17px;
+  line-height: 1.2;
+  word-break: break-word;
+}
+.message.message-pic .message-text {
+  padding: 0;
+  background: none;
+}
+.message.message-pic img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  border-radius: 16px;
+}
+.message-name {
+  font-size: 12px;
+  line-height: 1;
+  color: #8e8e93;
+  margin-bottom: 2px;
+  margin-top: 7px;
+}
+.message-hide-name .message-name {
+  display: none;
+}
+.message-label {
+  font-size: 12px;
+  line-height: 1;
+  color: #8e8e93;
+  margin-top: 4px;
+}
+.message-hide-label .message-label {
+  display: none;
+}
+.message-avatar {
+  width: 29px;
+  height: 29px;
+  border-radius: 100%;
+  margin-top: -29px;
+  position: relative;
+  top: 1px;
+  background-size: cover;
+  opacity: 1;
+  -webkit-transition-duration: 400ms;
+  transition-duration: 400ms;
+}
+.message-hide-avatar .message-avatar {
+  opacity: 0;
+}
+.message-sent {
+  -ms-flex-item-align: end;
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+.message-sent .message-name {
+  margin-right: 16px;
+}
+.message-sent .message-label {
+  margin-right: 6px;
+}
+.message-sent.message-with-avatar .message-text {
+  margin-right: 29px;
+}
+.message-sent.message-with-avatar .message-name {
+  margin-right: 45px;
+}
+.message-sent.message-with-avatar .message-label {
+  margin-right: 34px;
+}
+.message-sent .message-text {
+  padding-right: 22px;
+  background-color: #00d449;
+  color: white;
+  margin-left: auto;
+  -webkit-mask-box-image: url("data:image/svg+xml;charset=utf-8,<svg height='35' viewBox='0 0 96 70' width='48' xmlns='http://www.w3.org/2000/svg'><path d='m84 35c1 7-5 37-42 35-37 2-43-28-42-35-1-7 5-37 42-35 37-2 43 28 42 35z'/></svg>") 50% 56% 46% 42%;
+}
+.message-sent.message-last .message-text,
+.message-sent.message-with-tail .message-text {
+  border-radius: 16px 16px 0 16px;
+  -webkit-mask-box-image: url("data:image/svg+xml;charset=utf-8,<svg height='35' viewBox='0 0 96 70' width='48' xmlns='http://www.w3.org/2000/svg'><path d='m84 35c1 7-5 37-42 35-37 2-43-28-42-35-1-7 5-37 42-35 37-2 43 28 42 35z'/><path d='m96 70c-6-2-12-10-12-19v-16l-14 27s8 8 26 8z'/></svg>") 50% 56% 46% 42%;
+}
+.message-sent.message-last.message-pic img,
+.message-sent.message-with-tail.message-pic img {
+  border-radius: 16px 16px 0 16px;
+}
+.message-received {
+  -ms-flex-item-align: start;
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+.message-received .message-text {
+  padding-left: 22px;
+  background-color: #e5e5ea;
+  color: #000;
+  -webkit-mask-box-image: url("data:image/svg+xml;charset=utf-8,<svg height='35' viewBox='0 0 96 70' width='48' xmlns='http://www.w3.org/2000/svg'><path d='m96 35c1 7-5 37-42 35-37 2-43-28-42-35-1-7 5-37 42-35 37-2 43 28 42 35z'/></svg>") 50% 42% 46% 56%;
+}
+.message-received .message-name {
+  margin-left: 16px;
+}
+.message-received .message-label {
+  margin-left: 6px;
+}
+.message-received.message-with-avatar .message-text {
+  margin-left: 29px;
+}
+.message-received.message-with-avatar .message-name {
+  margin-left: 45px;
+}
+.message-received.message-with-avatar .message-label {
+  margin-left: 34px;
+}
+.message-received.message-last .message-text,
+.message-received.message-with-tail .message-text {
+  border-radius: 16px 16px 16px 0;
+  -webkit-mask-box-image: url("data:image/svg+xml;charset=utf-8,<svg height='35' viewBox='0 0 96 70' width='48' xmlns='http://www.w3.org/2000/svg'><path d='m96 35c1 7-5 37-42 35-37 2-43-28-42-35-1-7 5-37 42-35 37-2 43 28 42 35z'/><path d='m0 70c6-2 12-10 12-19v-16l14 27s-8 8-26 8z'/></svg>") 50% 42% 46% 56%;
+}
+.message-received.message-last.message-pic img,
+.message-received.message-with-tail.message-pic img {
+  border-radius: 16px 16px 16px 0;
+}
+.message-last {
+  margin-bottom: 8px;
+}
+.message-appear-from-bottom {
+  -webkit-animation: messageAppearFromBottom 400ms;
+  animation: messageAppearFromBottom 400ms;
+}
+.message-appear-from-top {
+  -webkit-animation: messageAppearFromTop 400ms;
+  animation: messageAppearFromTop 400ms;
+}
+.messages-auto-layout .message-name,
+.messages-auto-layout .message-label {
+  display: none;
+}
+.messages-auto-layout .message-avatar {
+  opacity: 0;
+}
+.messages-auto-layout .message-first .message-name {
+  display: block;
+}
+.messages-auto-layout .message-last .message-avatar {
+  opacity: 1;
+}
+.messages-auto-layout .message-last .message-label {
+  display: block;
+}
+html.retina.ios-6 .message,
+html.retina.ios-6 .message.message-pic img {
+  -webkit-mask-box-image: none;
+  border-radius: 16px;
+}
+@-webkit-keyframes messageAppearFromBottom {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes messageAppearFromBottom {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes messageAppearFromTop {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes messageAppearFromTop {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* === Floating Action Button === */
+.floating-button {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  z-index: 1500;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  background-color: #2196f3;
+  color: #fff;
+  overflow: hidden;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.floating-button-top {
+  position: absolute;
+  right: 4px;
+  top: 8px;
+  width: 36px;
+  height: 36px;
+  z-index: 1500;
+  overflow: hidden;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+html:not(.watch-active-state) .floating-button:active,
+.floating-button.active-state {
+  background: #0c82df;
+}
+.floating-button-toolbar,
+.speed-dial {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1500;
+}
+.floating-button-toolbar .floating-button,
+.speed-dial .floating-button {
+  right: 0;
+  bottom: 0;
+  position: relative;
+}
+.speed-dial .floating-button i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(1);
+  transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(1);
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+}
+.speed-dial .floating-button i + i {
+  -webkit-transform: translate3d(-50%, -50%, 0) rotate(-90deg) scale(0.5);
+  transform: translate3d(-50%, -50%, 0) rotate(-90deg) scale(0.5);
+  opacity: 0;
+}
+.speed-dial.speed-dial-opened .floating-button i {
+  -webkit-transform: translate3d(-50%, -50%, 0) rotate(90deg) scale(0.5);
+  transform: translate3d(-50%, -50%, 0) rotate(90deg) scale(0.5);
+  opacity: 0;
+}
+.speed-dial.speed-dial-opened .floating-button i + i {
+  -webkit-transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(1);
+  transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(1);
+  opacity: 1;
+}
+.speed-dial-buttons {
+  position: absolute;
+  width: 40px;
+  left: 50%;
+  margin-left: -20px;
+  bottom: 100%;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -moz-box-orient: vertical;
+  -moz-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  visibility: hidden;
+  pointer-events: none;
+}
+.speed-dial-buttons a {
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+  color: #fff;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #2196f3;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate3d(0, 8px, 0) scale(0.3);
+  transform: translate3d(0, 8px, 0) scale(0.3);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+html:not(.watch-active-state) .speed-dial-buttons a:active,
+.speed-dial-buttons a.active-state {
+  background: #0c82df;
+}
+.speed-dial-buttons a + a {
+  margin-bottom: 16px;
+}
+.speed-dial-opened .speed-dial-buttons {
+  visibility: visible;
+  pointer-events: auto;
+}
+.speed-dial-opened .speed-dial-buttons a {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0) scaleY(1);
+  transform: translate3d(0, 0, 0) scaleY(1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.speed-dial-opened .speed-dial-buttons a:nth-child(2) {
+  -webkit-transition-delay: 50ms;
+  transition-delay: 50ms;
+}
+.speed-dial-opened .speed-dial-buttons a:nth-child(3) {
+  -webkit-transition-delay: 100ms;
+  transition-delay: 100ms;
+}
+.speed-dial-opened .speed-dial-buttons a:nth-child(4) {
+  -webkit-transition-delay: 150ms;
+  transition-delay: 150ms;
+}
+.speed-dial-opened .speed-dial-buttons a:nth-child(5) {
+  -webkit-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
+.speed-dial-opened .speed-dial-buttons a:nth-child(6) {
+  -webkit-transition-delay: 250ms;
+  transition-delay: 250ms;
+}
+.floating-button-to-popover.floating-button-to-popover {
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+}
+.floating-button-to-popover.floating-button-to-popover-in {
+  -webkit-transition-duration: 100ms;
+  transition-duration: 100ms;
+}
+.floating-button-to-popover.floating-button-to-popover-in i {
+  opacity: 0;
+  -webkit-transition-duration: 100ms;
+  transition-duration: 100ms;
+}
+.floating-button-to-popover.floating-button-to-popover-scale {
+  border-radius: 0;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  box-shadow: none;
+}
+.floating-button-to-popover.floating-button-to-popover-out {
+  -webkit-transition-delay: 0ms;
+  transition-delay: 0ms;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+}
+.floating-button-to-popover.floating-button-to-popover-out i {
+  opacity: 1;
+  -webkit-transition-duration: 100ms;
+  transition-duration: 100ms;
+  -webkit-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
