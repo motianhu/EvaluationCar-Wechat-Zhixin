@@ -9,7 +9,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=2.0" />
 <meta name="format-detection" content="telephone=no">
 <link rel="stylesheet" href="/static/css/westMobi.css" type="text/css" />
+<link rel="stylesheet" href="/static/artdialog/css/ui-dialog.css">
 <script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/artdialog/dist/dialog-min.js"></script>
 <script type="text/javascript">
 function isWeiXin(){
     var ua = window.navigator.userAgent.toLowerCase();
@@ -293,7 +295,7 @@ if( isWeiXin()){
 						<span class="pg_tigle"><red>*</red>14.右前门</span>
 					</li>
 					<li i_type="车体骨架" i_no="15">
-						<div class="up_img" <?php if(isset($carimage['车体骨架']['13'])){?> style="background-size: 100% 100%;background-image:url(<?php echo base_url().$carimage['车体骨架']['15'];?>)"<?php } ?>></div>
+						<div class="up_img" <?php if(isset($carimage['车体骨架']['15'])){?> style="background-size: 100% 100%;background-image:url(<?php echo base_url().$carimage['车体骨架']['15'];?>)"<?php } ?>></div>
 						<span class="pg_tigle">
 							<?php if($companyId != '9'){?>
 							<red>*</red>
@@ -448,6 +450,20 @@ if( isWeiXin()){
 			<div style="clear:both;">
 				<div style="padding:10px 0;"><span style="color:red;">*</span>申请单号：<input type="text" name="applyCarBillId" id="applyCarBillId" class="ysjg" /></div>
 			</div>
+			<?php }?>
+			<?php if($isGh == TRUE){?>
+			<div style="clear:both;">
+				<div style="padding:10px 0;">
+					<span style="color:red;">*</span>租赁期限：
+					<select name="leaseTerm" style="width:20%;">
+						<option value="0" <?php isset($leaseTerm) && $leaseTerm == 0?'selected':''?>>无租期</option>
+						<option value="12" <?php isset($leaseTerm) && $leaseTerm == 12?'selected':''?>>12</option>
+						<option value="24" <?php isset($leaseTerm) && $leaseTerm == 24?'selected':''?>>24</option>
+						<option value="36" <?php isset($leaseTerm) && $leaseTerm == 36?'selected':''?>>36</option>
+					</select>
+				</div>
+			</div>
+			<div style="clear:both;font-size:12px;color:red;">注:采集员非残值租赁产品就选无租期</div>
 			<?php }?>
 			<div style="clear:both;">
 				<div>备注</div>

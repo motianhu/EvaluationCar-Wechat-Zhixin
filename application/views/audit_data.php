@@ -16,7 +16,7 @@
 	              <strong>最终评估价格：</strong><span class="greencolor"><?php echo $val['evaluatePrice']?(number_format($val['evaluatePrice']).'元'):'无';?></span>
 	              <span class="cz_btn">
 	              	<a class="d_submit" href="<?php echo base_url().'index.php/audit/detail/'.$val['id'];?>" >查看</a>
-	              	<?php if($val['status'] == '23'){?>
+	              	<?php if($val['status'] == '33'){?>
 	              	<a class="d_submit" href="<?php echo base_url().'index.php/evaluation/index/'.$val['id'];?>" >修改</a>
 	              	<?php }?>
 	              </span>

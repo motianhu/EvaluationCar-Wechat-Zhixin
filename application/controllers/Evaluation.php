@@ -32,15 +32,16 @@ class Evaluation extends CI_Controller {
 		$query = $this->db->select('companyId,chineseName')->where('englishName',$this->user)->get('user');
 		$companyId = isset($query->row()->companyId) ? $query->row()->companyId : 0;
 		$chineseName = isset($query->row()->chineseName) ? $query->row()->chineseName : '';
+		
 		if($id && $isEdit)
 		{
 			//修改'23'	=>	'初审驳回' 单据
-			$query = $this->db->where(array('id'=>$id,'createUser'=>$this->user,'status'=>'23'))->order_by('createTime','DESC')->limit(1)->get('carbill');
+			$query = $this->db->where(array('id'=>$id,'createUser'=>$this->user,'status'=>'33'))->order_by('createTime','DESC')->limit(1)->get('carbill');
 			$data = $row = $query->row_array();
 			
 			if(empty($row))
 			{
-				show_error(base_url().'index.php/evaluation/index',500,'评估单存在.');
+				show_error(base_url().'index.php/evaluation/index',500,'评估单不存在.');
 			}
 			else 
 			{
@@ -110,7 +111,19 @@ class Evaluation extends CI_Controller {
                 $query = $this->db->where(array('id'=> $companyId, 'superCompany'=>9))->get('company');
                 $isXfChildCompany = $row = $query->row_array();
                 $data['isXfGroup'] = (($companyId == 9) or !empty($isXfChildCompany));
-
+       	
+                //是否广汇或下属公司
+	        $data['isGh'] = FALSE;
+	        if($companyId == '8'){
+        	     $data['isGh'] = TRUE;
+	        }else{
+        	    //查询上级公司id
+	            $query = $this->db->select('superCompany')->where('id',$companyId)->get('company');
+	            $superCompany = isset($query->row()->superCompany) ? $query->row()->superCompany : 0;
+        	     if($superCompany == '8'){
+	                $data['isGh'] = TRUE;
+	             }
+        }
 		if($noWeixin)
 			$this->load->view('evaluation_index1',$data);
 		else
@@ -190,7 +203,9 @@ class Evaluation extends CI_Controller {
                         $data['isXfGroup'] = (($companyId == 9) or !empty($isXfChildCompany));
                         
                         //图片上传完，更新
-			$bNum = $data['isXfGroup'] ? '18' : '24'; //必填数
+			$bNum = $data['isXfGroup'] ? '18' : '24'; //必填数			
+			//租赁期限
+			$leaseTerm = intval($this->input->post('leaseTerm'));
                         
 			if($num > $bNum)
 			{
@@ -203,7 +218,11 @@ class Evaluation extends CI_Controller {
 				//提交客户端
 				$recordFrom = $noWeixin ? 'mobileWeb' : '微信采集';
 				//状态0,23允许更新
-				$sql = "update carbill set applyCarBillId='{$applyCarBillId}', recordFrom='{$recordFrom}', status='21',preSalePrice={$preSalePrice},mark='{$remark}',modifyTime='{$date}',csTime='{$date}',applyAllOpinion=concat_ws('','{$op}',applyAllOpinion) where carBillId='{$car_bill_id}' and status in('0','23')";
+				$sql = "update carbill set applyCarBillId='{$applyCarBillId}', recordFrom='{$recordFrom}', 
+				createTime = IF(`status`='0','{$date}',createTime),
+				`status`='31',preSalePrice={$preSalePrice},mark='{$remark}',modifyTime='{$date}',csTime='{$date}',
+				applyAllOpinion=concat_ws('','{$op}',applyAllOpinion),leaseTerm = '{$leaseTerm}'
+				where carBillId='{$car_bill_id}' and `status` in('0','23','33','32','31')";
 				$r = $this->db->query($sql);
 				if($r)
 				{

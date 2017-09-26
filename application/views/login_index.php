@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="/static/js/jquery.js"></script>
 <script type="text/javascript" src="/static/artdialog/dist/dialog-min.js"></script>
 </head>
-<body>
+<body style="text-align:center">
 	<div class="MainBody">
 		<div class="mainInfoBody">
 			<header id="header"> <section> <strong>会员登录</strong></section> </header>
@@ -45,6 +45,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>-->
 		</div>
 	</div>
+        <div class="fmbs2">            
+		<div style="padding-top:10px">                
+
+		   <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备16064042号</a>
+              	   <p class="copyright" style="line-height: 23px;">Copyright &copy;
+			Copyright (C) 2015-2017 深圳市海威康信息科技有限公司 All rights reserved
+		   <br/>               
+ 
+		</div>     
+	        <div style="clear:both"></div>                
+	</div> 
 </body>
 <script type="text/javascript">
 function isWeiXin(){

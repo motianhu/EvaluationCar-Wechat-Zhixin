@@ -300,7 +300,7 @@ if( ! isWeiXin()){
 						<span class="pg_tigle"><red>*</red>14.右前门</span>
 					</li>
 					<li i_type="车体骨架" i_no="15">
-						<div class="up_img" <?php if(isset($carimage['车体骨架']['13'])){?> style="background-size: 100% 100%;background-image:url(<?php echo base_url().$carimage['车体骨架']['15'];?>)"<?php } ?>></div>
+						<div class="up_img" <?php if(isset($carimage['车体骨架']['15'])){?> style="background-size: 100% 100%;background-image:url(<?php echo base_url().$carimage['车体骨架']['15'];?>)"<?php } ?>></div>
 						<span class="pg_tigle">
 							<?php if(empty($isXfGroup)){?>
 							<red>*</red>
@@ -449,12 +449,29 @@ if( ! isWeiXin()){
 				</ul>
 			</div>
 			<div style="clear:both;">
-				<div style="padding:10px 0;"><span style="color:red;">*</span>预售价格：<input type="number" name="preSalePrice" min="0" id="ysjg" class="ysjg" /></div>
+				<div style="padding:10px 0;">
+					<span style="color:red;">*</span>预售价格：
+					<input type="number" name="preSalePrice" min="0" id="ysjg" class="ysjg" value="<?php isset($preSalePrice)? $preSalePrice : '';?>" />
+				</div>
 			</div>
 			<?php if($is_show_aid == 'true'){?>
 			<div style="clear:both;">
 				<div style="padding:10px 0;"><span style="color:red;">*</span>申请单号：<input type="text" name="applyCarBillId" id="applyCarBillId" class="ysjg" /></div>
 			</div>
+			<?php }?>
+			<?php if($isGh == TRUE){?>
+			<div style="clear:both;">
+				<div style="padding:10px 0;">
+					<span style="color:red;">*</span>租赁期限：
+					<select name="leaseTerm" style="width:25%;">
+						<option value="0" <?php isset($leaseTerm) && $leaseTerm == 0?'selected':''?>>无租期</option>
+						<option value="12" <?php isset($leaseTerm) && $leaseTerm == 12?'selected':''?>>12</option>
+						<option value="24" <?php isset($leaseTerm) && $leaseTerm == 24?'selected':''?>>24</option>
+						<option value="36" <?php isset($leaseTerm) && $leaseTerm == 36?'selected':''?>>36</option>
+					</select>
+				</div>
+			</div>
+			<div style="clear:both;font-size:12px;color:red;">注:采集员非残值租赁产品就选无租期</div>
 			<?php }?>
 			<div style="clear:both;">
 				<div>备注</div>

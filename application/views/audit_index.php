@@ -52,11 +52,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	              </p>
 	              <p><strong>时间：</strong><span class="greencolor"><?php echo $val['modifyTime']?$val['modifyTime']:$val['createTime'];?></span>
 	              </p>
+	              <?php if(isset($val['leaseTerm']) && $val['leaseTerm'] > 0){?>
+	              <p>
+	              	<strong>租赁期限：</strong><?php echo $val['leaseTerm'];?> 月
+	              	<span class="cz_btn">残值价格：<?php echo $val['residualPrice'];?> 元</span>
+	              </p>
+	              <?php }?>
 	              <p>
 	              <strong>最终评估价格：</strong><span class="greencolor"><?php echo $val['evaluatePrice']?(number_format($val['evaluatePrice']).'元'):'无';?></span>
 	              <span class="cz_btn">
 	              	<a class="d_submit" href="<?php echo base_url().'index.php/audit/detail/'.$val['id'];?>" >查看</a>
-	              	<?php if($val['status'] == '23'){?>
+	              	<?php if($val['status'] == '33'){?>
 	              	<a class="d_submit" href="<?php echo base_url().'index.php/evaluation/index/'.$val['id'].'/0/1';?>" >修改</a>
 	              	<?php }?>
 	              </span>
